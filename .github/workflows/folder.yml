@@ -1,0 +1,32 @@
+name: Manage Results Folder
+
+on:
+  workflow_dispatch:
+
+jobs:
+  manage-results-folder:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Remove results folder
+      run: |
+        rm -rf results
+
+    - name: Recreate results folder
+      run: |
+        mkdir results
+        DATE=$(TZ='Asia/Shanghai' date +'%Y年%m月%d日%H时%M分%S秒')
+        echo "$DATE" > results/timestamp.txt
+
+    - name: Commit changes
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+        git add results
+        git commit -m "Cleaned results folder"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
