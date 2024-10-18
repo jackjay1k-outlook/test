@@ -2,7 +2,7 @@ import requests
 
 # 在这里添加你收藏的链接
 urls = [
-    "https://avsox.website/cn",
+    "https://avsox.website",
     "https://www.javdb6.com",
     "https://www.b49t.com",
     "https://www.busfan.club"
