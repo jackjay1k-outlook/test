@@ -8,11 +8,16 @@ urls = [
     "https://www.busfan.club"
 ]
 
+headers = {
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0"
+}
+
 def check_urls(urls):
     results = []
     for url in urls:
         try:
-            response = requests.get(url, allow_redirects=True, headers={"Cache-Control": "no-cache"})
+            response = requests.get(url, allow_redirects=True, headers=headers)
             final_url = response.url.rstrip('/')
             original_url = url.rstrip('/')
 
