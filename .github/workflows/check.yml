@@ -31,8 +31,6 @@ jobs:
         pip install playwright
         python -m playwright install
 
-    - name: Install dependencies
-
     - name: Run redirect checker
       run: |
         python check_redirects.py
