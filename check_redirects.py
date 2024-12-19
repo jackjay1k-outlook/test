@@ -4,6 +4,7 @@ from urllib.parse import urlsplit
 # 在这里添加你收藏的链接
 urls = [
     "https://answers.microsoft.com/zh-hans/microsoftedge/forum/all/%E6%80%8E%E4%B9%88%E6%8A%8Aedge%E7%9A%84%E7%94%A8/78f4615d-c41b-4145-b42b-b718b32d98e8",
+    "https://www.qbittorrent.org",
     "https://zhuanlan.zhihu.com/p/550722045",
     "https://zhuanlan.zhihu.com/p/000000000"
 ]
